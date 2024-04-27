@@ -1,0 +1,55 @@
+###
+POST http://localhost:8080/api/register
+Content-Type: application/json
+
+{
+    "password": "password2",
+    "username": "user2",
+    "email": "rther@aaa.ru"
+}
+
+###
+POST http://localhost:8080/api/login
+Content-Type: application/json
+
+{
+  "password": "password2",
+  "username": "user2"
+}
+
+
+###
+POST http://localhost:8080/api/employe/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTcxNDIyNzU4MywiZXhwIjoxNzE0MjYzNTgzfQ.vkcgjGMAvEeiAu1JrlJrzJApgYPKWV29cWZwLOD5cDU
+
+###
+PUT http://localhost:8080/api/employe
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTcxNDIyMTkyNywiZXhwIjoxNzE0MjU3OTI3fQ.6mMAjrRTwurmbo3u5j_M3Wv35ij0s0V-uIRgCZygrYA
+Content-Type: application/json
+
+{
+  "specialization": "java dev",
+  "email": "vadik@gmail.com",
+  "location": "Novosibirsk",
+  "aboutMe": "desc",
+  "age": "2009-04-27",
+  "competencies": [
+    "spring",
+    "maven",
+    "hibernate"
+  ],
+  "placeWorkList": [
+    {
+      "companyName": "sdfbdsb",
+      "dateBegin": "2023-09-27",
+      "dateEnd": "2024-03-27",
+      "position": "java dev"
+    },
+    {
+      "companyName": "zdfbdsb",
+      "dateBegin": "2022-03-01",
+      "dateEnd": "2023-09-27",
+      "position": "java dev"
+    }
+  ]
+}
