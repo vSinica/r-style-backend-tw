@@ -10,10 +10,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.vados.rstyletestwork.config.JwtUtil;
 import ru.vados.rstyletestwork.config.UserDetailService;
 import ru.vados.rstyletestwork.dto.UserDto;
@@ -33,12 +30,14 @@ public class UserController {
     @Autowired
     private JwtUtil jwtUtil;
 
+    @CrossOrigin("*")
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody UserDto.UserRegister user) {
         userDetailService.registerUser(user.getUsername(), user.getEmail(), user.getPassword());
         return ResponseEntity.ok("User registered successfully.");
     }
 
+    @CrossOrigin("*")
     @PostMapping("/login")
     public ResponseEntity<String> loginUser(@RequestBody UserDto.UserLogin user) {
         try {

@@ -3,8 +3,8 @@ POST http://localhost:8080/api/register
 Content-Type: application/json
 
 {
-    "password": "password2",
-    "username": "user2",
+    "password": "password",
+    "username": "user",
     "email": "rther@aaa.ru"
 }
 
@@ -13,8 +13,8 @@ POST http://localhost:8080/api/login
 Content-Type: application/json
 
 {
-  "password": "password2",
-  "username": "user2"
+  "password": "password",
+  "username": "user"
 }
 
 

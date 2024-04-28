@@ -17,7 +17,7 @@ public class EmployeController {
 
     private final EmployeService employeService;
 
-    @PostMapping("/{employeId}")
+    @GetMapping("/{employeId}")
     @SecurityRequirement(name = "Bearer Authentication")
     public EmployeDto getByIdEmploye(
             Authentication authentication,
